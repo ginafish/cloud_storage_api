@@ -8,7 +8,7 @@ var (
 	router = gin.Default()
 )
 
-// Run will start the server
+// Initialize server
 func Run() {
 	getRoutes()
 	router.Use(gin.Logger())
@@ -16,9 +16,7 @@ func Run() {
 	router.Run(":5000")
 }
 
-// getRoutes will create our routes of our entire application
-// this way every group of routes can be defined in their own file
-// so this one won't be so messy
+// Initialize routes
 func getRoutes() {
 	v1 := router.Group("/api/v1")
 	addStatusRoutes(v1)
