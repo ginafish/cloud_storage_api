@@ -32,6 +32,7 @@ func TestGetStatus(t *testing.T) {
 	}
 	gotExpectedData := len(appStatuses) == 1 && appStatuses[0].app == "api" && appStatuses[0].status == "UP"
 	if !gotExpectedData {
+		t.Log(resp)
 		t.Log(appStatuses)
 		t.Error("Status data not formatted as expected")
 	}
